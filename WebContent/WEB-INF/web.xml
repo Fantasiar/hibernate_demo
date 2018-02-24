@@ -39,4 +39,14 @@
     <servlet-name>ListCustomerServlet</servlet-name>
     <url-pattern>/listCustomer</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddLinkManServlet</display-name>
+    <servlet-name>AddLinkManServlet</servlet-name>
+    <servlet-class>com.fouter.web.AddLinkManServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddLinkManServlet</servlet-name>
+    <url-pattern>/addLinkMan</url-pattern>
+  </servlet-mapping>
 </web-app>

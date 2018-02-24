@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.DetachedCriteria;
 
 import com.fouter.dao.CustomerDao;
 import com.fouter.dao.impl.CustomerDaoImpl;
@@ -40,6 +41,20 @@ public class CustomerServiceImpl implements CustomerService {
 		Transaction tx = session.beginTransaction();
 		
 		List<Customer> list=customerDao.getAll();
+		
+		tx.commit();
+		
+		return list;
+	}
+
+	@Override
+	public List<Customer> getAll(DetachedCriteria dc) {
+		// TODO Auto-generated method stub
+		Session session=HibernateUtils.getCurrentSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+		List<Customer> list=customerDao.getAll(dc);
 		
 		tx.commit();
 		
